@@ -12,6 +12,7 @@ router.get('/auth/refresh', async (req, res) => {
         }
 
         const userData = tokenService.validateRefreshToken(refreshToken);
+        
         if (!userData) {
             return res.status(401).json({ message: 'Invalid refresh token' });
         }
